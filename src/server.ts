@@ -15,7 +15,7 @@ async function bootstrap() {
   server.use(router)
   server.use(handleBodyError)
 
-  server.listen(Number(process.env.APP_PORT) || 3333, '0.0.0.0', () => {
+  server.listen(Number(process.env.PORT) || 3333, '0.0.0.0', () => {
     console.log(`🚀 Server listening on: http://localhost:3333`)
   })
 }
