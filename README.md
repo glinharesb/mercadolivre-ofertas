@@ -2,7 +2,7 @@
 
 <img src="https://camo.githubusercontent.com/4e084bac046962268fcf7a8aaf3d4ac422d3327564f9685c9d1b57aa56b142e9/68747470733a2f2f7472617669732d63692e6f72672f6477796c2f657374612e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/dwyl/esta.svg?branch=master" style="max-width: 100%;">
 
-API developed using web scraping to show products offers from Mercado Livre: https://www.mercadolivre.com.br/ofertas
+API developed using web scraping to show products offers from <a href="https://www.mercadolivre.com.br/ofertas" target="_blank">Mercado Livre</a>.
 <br>
 <b>An always up-to-date version is hosted at: https://mercadolivre-ofertas.herokuapp.com/</b>
 
