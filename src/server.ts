@@ -3,6 +3,10 @@ import cors from 'cors'
 import { router } from './routes'
 import { handleBodyError } from './helpers/handleBodyError'
 
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 async function bootstrap() {
   const server = express()
 

@@ -15,11 +15,15 @@ const nodeCache = new NodeCache()
 
 export class OffersService {
   constructor() {
+    const pages = Number(process.env.PAGES_AMOUNT) || 42
+    const interval: number =
+      eval(process.env.INTERVAL_TO_UPDATE as string) || 10 * 1000 * 60 * 60
+
     const updateOffers = () => {
-      this.getOffersByScrapping(42).then((data) => this.setOffers(data))
+      this.getOffersByScrapping(pages).then(this.setOffers)
     }
 
-    setInterval(() => updateOffers(), 10 * 1000 * 60 * 60) // 10 hours
+    setInterval(() => updateOffers(), interval)
     updateOffers()
   }
 
@@ -28,7 +32,7 @@ export class OffersService {
       const result: boolean = nodeCache.set('offers', data)
 
       if (!result) {
-        throw new Error('internal error')
+        throw new Error('Internal error')
       }
 
       return result
@@ -42,7 +46,7 @@ export class OffersService {
       const result: IOffers[] | undefined = nodeCache.get('offers')
 
       if (!result) {
-        throw new Error('internal error')
+        throw new Error('Loading...')
       }
 
       return result
